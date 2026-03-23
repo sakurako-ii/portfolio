@@ -1,21 +1,36 @@
 body{
-    background: url(stonetile.jpg) no-repeat center center/cover;
-    height: 100%;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 600;
+  font-style: normal;
+  /*
+  background: linear-gradient(270deg, #fdfdfd 0%, #fff5be 100%);
+  */
+  background: url(stonetile.jpg) no-repeat center center/cover;
   margin: 0;
-  padding: 0 40px;
-  overflow: hidden;
-  font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: italic;
+}
+.main{
+ padding: 20px 40px;
+}
+.menu{
+  position: fixed;
+  top: 0;
+  width: 220px;
+  background-color: white;
+  height: 100%;
+  margin: 0;
+}
+.menu nav ul li{
+  padding-top: 30px;
+}
+.menu nav ul li a{
+  font-size: 1.3rem;
   
 }
-html{
-    height: 100%;
-  margin: 0;
-  padding: 0;
+.main{
+  margin-left: 220px;
 }
 h1{
+  font-size: 2.5rem;
 background: linear-gradient(90deg, #006400, #228B22); /* 濃い緑→やや明るい緑 */
 /* 
 background: linear-gradient(90deg, #ffb6c1, #9370db); ピンク→紫
@@ -23,6 +38,13 @@ background: linear-gradient(90deg, #ffb6c1, #9370db); ピンク→紫
   -webkit-background-clip: text;  /* 背景を文字に適用 */
   -webkit-text-fill-color: transparent; /* 文字色を透明にして背景を見せる */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 50px;
+    display: inline-block;
+}
+h2{
+  text-decoration: underline dashed 1px black;
+  text-underline-offset: 4px;
+
 }
 main,nav a,main ul li a{
     color: rgb(66, 66, 66);
@@ -30,11 +52,15 @@ main,nav a,main ul li a{
 nav a,main ul li a{
     text-decoration: none;
 }
-nav a{
-    padding: 10px;
-}
-main ul li{
+ul li{
     list-style: none;
+}
+.banner{
+  width: 40%;
+  margin:12px;
+}
+.contents>div{
+  margin-bottom: 40px;
 }
 footer{
  background: linear-gradient(90deg, #006400, #228B22); /* ピンク→紫 */
