@@ -6,36 +6,79 @@
     <link href="style.css" rel="stylesheet">
     <script src="javaScript.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,900&family=Shippori+Mincho&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
     <title>my portfolio</title>
 </head>
 <body>
+  <div class="menu">
+  <nav>
+    <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+    </ul>
+    </nav>
+  </div>
+  <div class="main">
     <header>
     <h1>Sakurako Miyamoto Portfolio</h1>
-    <nav>
-      <a href="about.html">About</a>
-      <a href="works.html">Works</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main>
-        <section>
+    </header>
+  <div class="contents">
+    <div id="about">
       <h2>About</h2>
-      <p>2016.3  京都女子高等学校卒業<br>
-        2022.9  明治学院大学心理学部心理学科卒業
+      <p>宮本 桜子、1998年生まれ。丁寧で正確な仕事を心がけており、より良い表現がないか模索することが好きです。好奇心や探求心が強く、未知のプログラミング言語を勉強することに意欲的です。
       </p>
-    </section>
-    <section>
+    </div>
+    <div id="experience">
+      <h2>Experience</h2>
+      <p>2024.1より全国に約150教室のパソコン教室を運営している株式会社ミライフに入社。マーケティング部に所属し、officeソフトを使用した事務作業、illustratorを使用したバナーや記事・チラシ作り、wordpressでの編集作業、プレスリリース執筆、html,css,javaScript,phpを使用しての社内サイト作りなどをしていた。
+      </p>
+      <p>
+        社内画像共有＆修正管理システム（社内向け）
+使用技術：HTML / CSS / JavaScript / PHP /
+期間：2025年xx月〜xx月
+概要：社内で共有される画像のアップロード・修正依頼をWeb上で完結できるシステムを構築。
+担当：要件定義、設計、コーディング、データベース設計
+ポイント：
+・実際に社内で運用され、改善提案フローの効率化に貢献
+      </p>
+      <p>
+        社内業務効率化を目的とした自主開発ツールを作成。
+チーム内でテスト運用・改善提案を行い、業務効率化の可能性を検証。
+      </p>
+    </div>
+    <div id="works">
       <h2>Works</h2>
-      <ul>
-        <li><a href="./works/banner/banner.html">🎨 Illustrator Banners</a></li>
-        <li><a href="./works/html-css-site/index.html">💻 Web Site (HTML/CSS/JS)</a></li>
-        <li><a href="https://github.com/あなたの名前/node-express">⚙️ Node.js + Express Code</a></li>
-        <li><a href="https://github.com/あなたの名前/php-mysql">🗄️ PHP + MySQL Code</a></li>
-      </ul>
-    </section>
-  </main>
+        <h3>🎨 Illustrator Banners</h3>
+        <img src="img/banner1.png" class="banner">
+        <img src="img/banner2.png" class="banner">
+        <img src="img/banner3.png" class="banner">
+        <h3><a href="marketing-page/index.php">💻 Web Site (HTML/CSS/JS)</a></h3>
+        <p>社内サイトにおいてマーケティング部専用ページを作成。社内ページなので、見ていて楽しくなるような堅苦しさのない温かい雰囲気のページ作りを心がけた。</p>
+    </div>
+    <div id="skills">
+      <h2>Skills</h2>
+      <p>HTML,css,javaScript,php,Illustrator
+      </p>
+    </div>
+    <div id="education">
+      <h2>Education</h2>
+      <p>2016.3  京都女子高等学校卒業<br>
+        2022.9  明治学院大学心理学部心理学科卒業<br>
+        2023.4  職業訓練校にてwebデザインを学ぶ
+      </p>
+    </div>
+    <div id="contact">
+      <h2>Contact</h2>
+      <p>tel : 090-1907-2639<br>
+        mail : asagi0903moon@gmail.com
+      </p>
+    </div>
+  </div>
   <footer>
     <p>© 2025 Sakurako Miyamoto</p>
   </footer>
