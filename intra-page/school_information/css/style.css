@@ -1,0 +1,407 @@
+@charset "utf-8";
+
+body{
+	background-color:#fff9bb;
+	display:flex;
+	margin:0;
+	font-family: "IBM Plex Sans JP", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+	-webkit-text-stroke: 0.1px; 
+}
+.left-side,.right-side{
+	position:fixed;
+	overflow:hidden;
+	width: calc((100% - 900px) / 2);
+	height: 100vh;
+	top:0;
+	bottom:0;
+}
+.left-side{
+	left:0;
+}
+.right-side{
+	right:0;
+}
+.shape{
+  position: absolute; /* fixedじゃなくてもOK、左右サイド内で動かすから */
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;   
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.center{
+	width: 900px;
+	background-color:white;
+	font-size:15px;
+	margin-right:calc((100% - 900px) / 2);
+	margin-left:calc((100% - 900px) / 2);
+	margin-top:0;
+	border-top: solid 30px #ef8db7;
+}
+h1{
+	font-size:43px;
+	color:#6e4a5a;
+	padding:8px 28px 8px;
+	margin-top:-30px;
+	margin-bottom:-20px;
+	line-height:1.2;
+}
+
+h1 .title-small{
+	font-size:22px;
+	font-weight:300;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+h1 .title-large{
+	font-weight:500;
+}
+
+.caution{
+	display:flex;
+	background-color:#fad9e7;
+	align-items: end;
+	padding-top: 4px;
+	padding-left:10px;
+}
+.bear{
+	justify-content: center;
+	margin-left: 20px;
+	flex-basis: 18%;
+}
+.caution .bear img{
+	max-width:100%;
+	width:100px;
+	height:200px;
+	object-fit:contain;	
+}
+.caution>div{
+	padding-left: 15px;
+}
+p{
+	display: inline-block;
+	margin: 0;
+}
+.height{
+	line-height: 1.8;
+	margin: 25px 0;
+	display: inline-block;
+	color:#1e1e1e;
+	margin-left: 21px;
+	font-size: 0.89rem;
+}
+
+.icon{
+	width: 24.5px;
+	height: 24.5px;
+	vertical-align: middle;
+	margin-right: 2.5px;
+}
+.height img{
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+	align-content: center;
+}
+
+.underline{
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+.text-small{
+	font-size: 0.93em;
+	line-height: 1.6;
+	padding: 12px 38px 10px 33.5px;
+	display: inline-block;
+	background-color: #ffffff;
+	border-radius: 20px 0 0 20px;
+	margin-bottom: 20px;
+	color: #5c3e4c;
+}
+.text-small-right{
+	float: right;
+}
+p a:hover{
+	text-decoration:underline;color:#c05020;
+}
+
+
+nav{
+	margin: 40px auto 10px;
+	background-color:#ef8db7;
+	height: 50px;
+	width: 900px;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+  	overflow: hidden;
+}
+.btn_text {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+.fancy-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: white;
+  border-radius: 30%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: 1;
+}
+
+/* ホバー時 */
+.fancy-btn:hover .btn_text {
+  color: #ff69b4;     /* 文字ピンク */
+}
+
+.fancy-btn:hover::before {
+  width: 100%;        /* 横方向も少し広がる */
+  height: 120%;       /* 縦方向も少し広がる */
+}
+nav ul{
+	display:flex;
+	padding:0;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+
+li{
+	padding: 6px 14px 6px;
+	list-style: none;
+	display: inline-block;
+}
+nav ul button{
+	all:unset;
+	cursor:pointer;
+	color: #ffffff;
+	font-size: 1rem;
+	position: relative;
+	overflow: hidden;
+	transition: color 0.3s ease;
+	box-sizing: border-box;
+	z-index: 0;
+	height: 30px;
+	width: 120%;
+	text-align: center;
+}
+nav ul button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  width: 120%;
+  height: 120%;
+  background: white;
+  transform-origin: center center;
+  transition: transform 0.5s ease;
+  z-index: 1;
+  transform: translate(-50%, -50%) scale(0.2);
+  inset: -12px -24px; 
+}
+nav ul button:hover {
+  color: #ff69b4;
+}
+nav ul button:hover::before {
+	transform:translate(-50%, -50%) scale(1.1);
+}
+.to-top{
+	position: fixed;
+	width: 60px;
+	bottom: 20px;
+	left: 0;
+}
+
+.page-top{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: end;
+	width: 100%;
+	height: 80px;
+	color: #fff;
+  	border: 0;
+  	background: #dba351;
+  	border-radius: 0 15px 15px 0;
+  	opacity: 0;
+  	visibility: hidden;
+  	transition: 0.3s;
+  	position: relative;
+  	margin-bottom: 20px;
+}
+.arrow{
+	font-size: 25px;
+	transform: translateX(-1.5px);
+	padding-top: 20px;
+	line-height: 2;
+	margin: auto;
+}
+.page-top.is-active{
+	opacity: 1;
+	visibility: visible;
+}
+button p{
+  margin-bottom: 12px;	
+  font-size: 15px;
+  margin-top: 0px;
+  letter-spacing: 2px;
+}
+
+dl .section{
+	display:flex;
+	justify-content:space-between;
+	margin: 100px 0;
+}
+
+.two, .four, .six, .eight, .ten{
+	flex-direction: row-reverse;
+}
+
+dl .shorter-border{
+	flex-basis: 30%;
+}
+
+dl .longer-border{
+	flex-basis:37%;
+}
+
+.area-title .border{
+	border-bottom:black solid 1px; 
+	font-size:26px;
+	padding-bottom:2px;
+	display:inline-block;
+	width:100%;
+}
+
+.one dt, .three dt{
+	padding-right:30px;
+	float:right;
+}
+.seven dt{
+	padding-right:46px;
+	float:right;
+}
+.five dt, .nine dt{
+	padding-right:48px;
+	float:right;
+}
+
+.two dt, .four dt, .six dt, .eight dt, .ten dt{
+	padding-left: 14px;
+}
+
+.one .block, .three .block, .five .block, .seven .block, .nine .block{
+	float:right;
+}
+.two .block, .four .block, .six .block, .eight .block, .ten .block{
+	padding-top:7px;
+}
+.two .block{
+	padding-left: 63px;
+}
+.four .block{
+	padding-left: 130px;
+}
+.six .block{
+	padding-left: 65px;
+}
+.eight .block{
+	padding-left: 40px;
+}
+.ten .block{
+	padding-left: 36px;
+}
+dl .content{
+	display:flex;
+	flex-wrap:wrap;
+	padding:25px 30px 25px 10px;
+
+}
+
+.touhoku, .higashikantou, .tokai, .hanwa, .tyugoku{
+	border-radius:70px 0 0 70px;
+}
+
+.kitakantou, .tokyo, .keihan, .hanshin, .kyusyu{
+	border-radius:0 70px 70px 0;
+}
+
+.touhoku, .tokyo, .keihan, .hanshin{
+	background-color:#b4ccd8;
+	flex-basis:60%;
+	
+}
+.kitakantou,.kyusyu{
+	background-color:#fff9bb;
+	flex-basis: 50%;
+}
+
+.higashikantou,.hanwa{
+	background-color:#cde3ac;
+	flex-basis:60%;
+}
+
+.tokai, .tyugoku{
+	background-color:#9a8fc3;
+	flex-basis: 60%;
+}
+
+.list_index dd{
+	display:inline-block;
+	margin-top:5px;
+	margin-bottom:8px
+}
+
+.both{
+	background-color:#efefef;
+	color:#2a53a4;
+	padding:7px 8px;
+	margin-top:3px;
+	border-radius: 15px;
+	text-align: center;
+	line-height: 1.5;
+}
+
+dd span{
+	font-size:20px;
+}
+
+.longer-text{
+	font-size:18px;
+}
+
+.both a:hover{
+	text-decoration:underline;color:#c05020;
+}
+
+a{
+	text-decoration:none;
+}
+
+.shape{
+      position: fixed;
+      pointer-events: none;
+      user-select: none;
+      z-index: 2;
+    }
+.scroll a{
+	float: right;
+	margin-right:30px;
+	margin-bottom:10px;
+}
+.scroll a:hover{
+	text-decoration:underline;color:#c05020;
+}

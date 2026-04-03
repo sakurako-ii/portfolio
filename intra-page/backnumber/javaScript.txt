@@ -1,0 +1,148 @@
+
+// モーダルウィンドウ全体を指す要素
+const modal = document.getElementById('modal');
+
+// モーダル内で拡大表示される画像を指す要素
+const modalImg = document.getElementById('modalImage');
+
+// .popupクラスを持つ画像のリストです。これらの画像をクリックすると、モーダルが表示されます
+const imgs = document.querySelectorAll('.popup');
+
+// モーダルを閉じるためのボタン
+const closeSpan = document.getElementById('close');
+
+// 画像クリックでモーダルを表示するイベント
+for( let img of imgs) {
+    img.addEventListener("click", function(){
+
+        //モーダルを表示する
+        modal.style.opacity = "1";
+        modal.style.visibility = "visible";
+
+        // モーダルで表示する画像に、クリックした画像のパスを設定する
+        modalImg.src = this.src;
+    });
+}
+
+// クローズボタンを押したらモーダルを閉じる
+closeSpan.addEventListener("click", () => {
+    modal.style.opacity = "0";
+    modal.style.visibility = "hidden";
+//  リセット
+    isDragging = false;
+});
+
+// 画像以外の部分をクリックしたらモーダルを閉じる
+
+
+ window.onclick = function(event) {
+    if (event.target == modal) {
+         modal.style.opacity = "0";
+         modal.style.visibility = "hidden";
+         //  リセット
+        isDragging = false;
+     }
+}
+
+// ==========================
+// ズーム + ドラッグ機能
+// ==========================
+
+// 画像の拡大率
+let scale = 1;
+
+// 画像の位置
+let pos = { x: 0, y: 0 };
+
+// ドラッグ中かどうか
+let isDragging = false;
+
+// 最後にドラッグした位置
+let last = { x: 0, y: 0 };
+
+// 🖱️ ホイールでズーム
+modalImg.addEventListener("wheel", e => {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+        scale += 0.1; // 拡大
+    } else {
+        scale = Math.max(0.5, scale - 0.1); // 縮小（下限0.5）
+    }
+    updateTransform();
+});
+
+// 🖱️ ドラッグ開始
+modalImg.addEventListener("mousedown", e => {
+    isDragging = true;
+    last = { x: e.clientX, y: e.clientY };
+
+    // document全体でマウス移動・離す処理を監視
+    document.addEventListener("mousemove", onDragMove);
+    document.addEventListener("mouseup", onDragEnd);
+});
+
+// ドラッグ中の処理
+function onDragMove(e) {
+    if (!isDragging) return;
+    pos.x += e.clientX - last.x;
+    pos.y += e.clientY - last.y;
+    last = { x: e.clientX, y: e.clientY };
+    updateTransform();
+}
+
+// ドラッグ終了
+function onDragEnd() {
+    isDragging = false;
+    // イベントリスナー解除（無駄に残らないように）
+    document.removeEventListener("mousemove", onDragMove);
+    document.removeEventListener("mouseup", onDragEnd);
+}
+
+modalImg.setAttribute("draggable", "false");
+
+
+// 画像の位置とスケールを反映
+function updateTransform() {
+    modalImg.style.transform = `translate(${pos.x}px, ${pos.y}px) scale(${scale})`;
+}
+
+// モーダルを開くたびにリセット
+for (let img of imgs) {
+    img.addEventListener("click", function () {
+        modal.style.opacity = "1";
+        modal.style.visibility = "visible";
+        modalImg.src = this.src;
+
+        // 📌 ズーム・位置をリセット
+        scale = 1;
+        pos = { x: 0, y: 0 };
+        modalImg.style.transform = "translate(0px, 0px) scale(1)";
+    });
+}
+/*
+document.addEventListener("DOMContentLoaded", () => {
+    const imgs = document.querySelectorAll(".popup");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+
+                // 少し遅らせて順番に表示
+                setTimeout(() => {
+                    img.src = img.dataset.src; // 画像を読み込む
+                    img.classList.add("visible"); // CSSでフェードイン
+                }, index * 300); // 300msずつ遅らせる
+
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1
+    });
+
+    imgs.forEach(img => observer.observe(img));
+});
+*/

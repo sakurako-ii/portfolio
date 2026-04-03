@@ -1,0 +1,251 @@
+@charset "utf-8";
+/*  
+html{
+	
+}
+*/
+
+body{
+	background-color:#fff9bb;
+	display:flex;
+	margin:0;
+	height:6100px;
+}
+.blue-circle{
+	background-image:url(../img/page-left/blue-circle.png)
+}
+.red-triangle{
+	background-image:url(../img/page-left/red-triangle.png)
+}
+.lightblue-square{
+	background-image:url(../img/page-left/lightblue-square.png)
+}
+.green-square{
+	background-image:url(../img/page-left/green-square.png)
+}
+.yellow-triangle{
+	background-image:url(../img/page-left/yellow-triangle.png)
+}
+.green-triangle{
+	background-image:url(../img/page-right/green-triangle.png)
+}
+.yellow-circle{
+	background-image:url(../img/page-right/yellow-circle.png)
+}
+.red-square{
+	background-image:url(../img/page-right/red-square.png)
+}
+.blue-square{
+	background-image:url(../img/page-right/blue-square.png)
+}
+.lightblue-circle{
+	background-image:url(../img/page-right/lightblue-circle.png)
+}
+.left-side,.right-side{
+	position:fixed;
+	overflow:hidden;
+	width: calc((100% - 900px) / 2);
+	height: 100vh;
+	top:0;
+	bottom:0;
+}
+.left-side{
+	left:0;
+}
+.right-side{
+	right:0;
+}
+.shape{
+position:absolute;
+background-size:contain;
+background-repeat:no-repeat;
+width:100px;
+height:100px;
+background-position:right center;
+}
+.center{
+	width:900px;
+	background-color:white;
+	font-size:15px;
+	margin-right:calc((100% - 900px) / 2);
+	margin-left:calc((100% - 900px) / 2);
+	margin-top:0;
+	border-top: solid 30px #f3b0cd;
+	font-family: 'Noto Sans JP', sans-serif;
+	height:6100px;
+}
+h1{
+	font-size:40px;
+	color:#6e4a5a;
+	padding:5px 20px 5px;
+	margin-top:-30px;
+	margin-bottom:-20px;
+	line-height:1.3;
+}
+
+h1 .title-small{
+	font-size:28px;
+	font-weight:300;
+}
+
+h1 .title-large{
+	font-weight:500;
+}
+
+.caution{
+	display:flex;
+	background-color:#fad9e7;
+}
+
+.caution .bear img{
+	max-width:100%;
+	width:150px;
+	height:200px;
+	object-fit:contain;
+}
+
+.lead{
+	padding-top:10px;
+	padding-left:10px;
+}
+
+nav{
+	margin: 40px auto 10px;
+	background-color:#f3b0cd;
+	height:40px;
+	width:100%;
+	display:inline-block;
+}
+
+nav ul{
+	display:flex;
+	padding:0;
+	margin:5px auto;
+	justify-content:center;
+}
+
+li{
+	padding:3px 10px 6px;
+	list-style:none;
+}
+
+nav ul li a{
+	color:black;
+}
+
+li+ li{
+	border-left:1px solid #333;
+}
+
+.list_index{
+}
+
+dl .section{
+	display:flex;
+	justify-content:space-between;
+	margin: 55px 0;
+}
+
+.two, .four, .six, .eight, .ten{
+	flex-direction: row-reverse;
+}
+
+dl .area-title{
+	flex-basis:30%;	
+}
+
+.area-title .border{
+	border-bottom:black solid 1px; 
+	font-size:26px;
+	padding-bottom:2px;
+	display:inline-block;
+	width:100%;
+}
+
+dt{
+	padding-right:30px;
+	float:right;
+}
+
+.area-title .block{
+	padding-right:12px;
+	display:inline-block;
+	float:right;
+}
+
+/*
+.list_index dt{
+	text-decoration:underline;
+	text-underline-offset: 8px;
+	font-size:18px;
+	margin:40px auto 25px;
+	padding-right:10px;
+}
+*/
+
+dl .content{
+	display:flex;
+	flex-wrap:wrap;
+	padding:25px 30px 25px 10px;
+}
+
+.touhoku, .higashikantou, .tokai, .hanwa, .tyugoku{
+	border-radius:70px 0 0 70px;
+}
+
+.kitakantou, .tokyo, .keihan, .hanshin, .kyusyu{
+	border-radius:0 70px 70px 0;
+}
+
+.touhoku, .tokyo, .keihan, .hanshin{
+	background-color:#b4ccd8;
+	flex-basis:60%;
+	
+}
+.kitakantou,.kyusyu{
+	background-color:#fff9bb;
+	flex-basis: 50%;
+}
+
+.higashikantou,.hanwa{
+	background-color:#cde3ac;
+	flex-basis:60%;
+}
+
+.tokai, .tyugoku{
+	background-color:#9a8fc3;
+	flex-basis: 50%;
+}
+
+.list_index dd{
+	display:inline-block;
+	margin-top:5px;
+	margin-bottom:8px
+}
+
+.both{
+	background-color:#efefef;
+	color:#2a53a4;
+	padding:5px;
+	margin-top:3px;
+	border-radius: 15px;
+}
+
+dd span{
+	font-size:20px;
+}
+
+.longer{
+	font-size:18px;
+}
+
+.both a:hover{
+	text-decoration:underline;color:#c05020;
+}
+
+a{
+	text-decoration:none;
+}
+.scroll{
+	float:right;
+}

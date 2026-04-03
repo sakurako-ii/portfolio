@@ -1,0 +1,322 @@
+body{
+	background: url(../img/body.jpg) no-repeat center center/cover;
+	margin: 0;
+	padding: 0;
+	border: #ddd;
+	font-family: "Arial Unicode MS", "Helvetica Neue", Helvetica, sans-serif;
+	position: relative;
+	font-family: "M PLUS Rounded 1c", sans-serif;
+    font-style: normal;
+}
+
+header .wrapper{
+  width: 35%;
+  margin: auto;
+  position: relative;
+  overflow: hidden; 
+  height: 40vh; /* 画面に応じて高さを確保 */
+}
+header img{
+	width: 100%;
+}
+header{
+	text-align: center;
+	width: 100%;
+	margin: auto;
+	align-content: center;
+	color: #ffffff;
+}
+.title-visual{
+  position: absolute;
+  top: -100%;            /* 画面高さの半分上からスタート */
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  width: 100%;
+  animation: dropHeavy 1.5s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+}
+.calendar{
+	position:absolute;
+	top:3.5%;
+	right: 11%;
+}
+.calendar a{
+	color:white;
+	text-decoration: none;
+	font-size: 22px;
+}
+.calendar a:hover{
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
+}
+.calendar img{
+	width:150px;
+}
+
+.shake:hover {
+  animation: shake 0.7s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0); }
+  30% { transform: rotate(7deg); }
+  70% { transform: rotate(-5deg); }
+  100% { transform: rotate(0); }
+}
+
+@keyframes dropHeavy {
+  0% {
+    top: -110%;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  40% {
+    top: -30%;   /* 1回目着地 */
+    transform: translateX(-50%) rotate(2deg);
+  }
+  55% {
+    top: -38%;   /* 1回目跳ね返り */
+    transform: translateX(-50%) rotate(-1deg);
+  }
+  65% {
+    top: -34%;   /* 2回目落下 */
+    transform: translateX(-50%) rotate(1deg);
+  }
+  80% {
+    top: -36%;   /* 微揺れ */
+    transform: translateX(-50%) rotate(0.3deg);
+  }
+  100% {
+    top: -35%;   /* 最終停止 */
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
+
+.green{
+	position: absolute;
+	top: 0;
+}
+.green img{
+	width: 100%;
+}
+.left-top1{
+	width: 7%;
+	left: 15%;
+	top: -1%;
+}
+.left-top2{
+	width: 4%;
+	left: 13%;
+	top: -1%;
+}
+.left-top3{
+	width: 8%;
+	left: 0%;
+	z-index: -1;
+	top: -1%;
+}
+.left-top4{
+	width: 9%;
+	right: 0%;
+	top: -1%;
+}
+.left-top5{
+	width: 5%;
+	right: 0%;
+	top: -1%;
+}
+.left-top6{
+	width: 9%;
+	left: 1%;
+	top: -2%;
+}
+.line{
+	position: absolute;
+	pointer-events: none;
+	z-index: 9999;
+	object-fit: cover;
+}
+.line.top,.line.bottom{
+	width: 100%;
+	height: 25px;
+	left: 0;
+}
+.line.top{
+	top: 0;
+}
+.line.bottom{
+	bottom: -100px;
+}
+.line.left,.line.right{
+	width: 25px;
+	height: 105%;
+	top: 0;
+}
+.line.left{
+	left: 0;
+}
+.line.right{
+	right: 0;
+}
+
+
+.menu nav ul{
+	display: flex;
+	float: right;
+	margin-right: 90px;
+}
+.menu nav ul li{
+	list-style: none;
+	padding: 0px 25px 10px;
+	font-size: 1.2rem;
+	color: #ffffff;
+	z-index: 1;
+	font-weight: 500;
+}
+.menu nav ul li:last-child{
+	padding-right: 60px;
+}
+.menu nav ul li button{
+	all: unset;
+	cursor: pointer;
+}
+.menu nav ul li:hover{
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
+}
+
+.contents{
+	margin: 50px auto 120px;
+	width: 80%;
+	font-size: 1.5rem;
+	display:grid;
+	gap: 2%;
+	justify-content: space-between;
+	grid-template-columns: repeat(auto-fit,minmax(300px,32%));
+	padding: 40px;
+}
+.contents p{
+	font-size: 1.1rem;
+}
+
+.thumbnail{
+	display: flex;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+}
+picture{
+	width: 200px;
+	height: 200px;
+}
+.thumbnail img{
+	width: 100%;
+	transition: all 0.2s;
+	cursor: pointer;
+	display: block;
+}
+.thumbnail img:hover{
+	opacity: 0.6;
+}
+.caption{
+	text-align:center;
+	margin-bottom: 25px;
+	color: #7e3d19;
+	font-weight: 400;
+	font-size: 1.1rem;
+	background-color: #fffcd2;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+	width: 50%;
+	margin:  0px auto 10px;
+	padding: 0 0 5px;
+}
+.month, .calendar{
+	opacity: 0;
+	transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+.month:nth-child(1){
+	animation-delay: 0s;
+}
+.month:nth-child(2){
+	animation-delay: 0.2s;
+}
+.month:nth-child(3){
+	animation-delay: 0.4s;
+}
+.month:nth-child(4){
+	animation-delay: 0.7s;
+}
+.month:nth-child(5){
+	animation-delay: 0.9s;
+}
+.month:nth-child(6){
+	animation-delay: 1.1s;
+}
+.month:nth-child(7){
+	animation-delay: 1.4s;
+}
+.month:nth-child(8){
+	animation-delay: 1.6s;
+}
+.month:nth-child(9){
+	animation-delay: 1.8s;
+}
+.month:nth-child(10){
+	animation-delay: 2.1s;
+}
+.month:nth-child(11){
+	animation-delay: 2.3s;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* モーダルのスタイル */
+.modal{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* 背景色 */
+    opacity: 0; /* 初期状態では透明 */
+    visibility: hidden; /* 初期状態では不可視 */
+    transition: opacity 0.5s, visibility 0.5s; /* アニメーション効果 */
+}
+/* モーダルの画像スタイル */
+.modal-content {
+    display: block;
+	/*
+    max-width: 700px;
+	*/
+	
+	height: 100%;
+	
+}
+/* モーダルの閉じるボタン */
+#close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#modalImage {
+  cursor: grab; /* 通常は grab */
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+#modalImage:active {
+  cursor: grabbing; /* マウス押してるときは grabbing */
+}
+
